@@ -276,7 +276,7 @@ const FuturisticTimetable = () => {
 
   // Comprehensive timetable data
   const timetableData = {
-    'School of Computer Science And System Engineering (CSSE-3)': {
+    'School Of Computer Science And System Engineering (CSSE-3)': {
       'Monday': [
         { time: '11:00 - 12:00', subject: 'Discrete Mathematics', faculty: 'Dr. Suvasis Nayak', room: 'A-LH-206', tags: ['Maths', '4th sem'] },
         { time: '12:00 - 01:00', subject: 'EECO', faculty: 'Dr. Subhrajit Rath', room: 'A-LH-206', tags: ['EECO', 'Elective'] },
