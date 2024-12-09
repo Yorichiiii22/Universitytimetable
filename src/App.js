@@ -7,7 +7,12 @@ import {
   ChevronLeft, 
   ChevronRight, 
   Filter,
-  Search
+  Search,
+  Plus,
+  Edit,
+  Trash2,
+  Save,
+  X
 } from 'lucide-react';
 
 const FuturisticTimetable = () => {
@@ -19,6 +24,11 @@ const FuturisticTimetable = () => {
   const [remainderAlarm, setRemaindAlarm] = useState(null);
   const [activeTab, setActiveTab] = useState('Timetable');
 
+  // New state for user notes
+  const [notes, setNotes] = useState([]);
+  const [newNote, setNewNote] = useState('');
+  const [editingNoteId, setEditingNoteId] = useState(null);
+  const [editingNoteText, setEditingNoteText] = useState('');
   // Check screen size for responsiveness
   useEffect(() => {
     const checkScreenSize = () => {
@@ -172,6 +182,56 @@ const FuturisticTimetable = () => {
       slot.faculty.toLowerCase().includes(searchTerm.toLowerCase()) ||
       slot.room.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    // Load notes from local storage on component mount
+  useEffect(() => {
+    const savedNotes = localStorage.getItem('userNotes');
+    if (savedNotes) {
+      setNotes(JSON.parse(savedNotes));
+    }
+  }, []);
+
+  // Save notes to local storage whenever notes change
+  useEffect(() => {
+    localStorage.setItem('userNotes', JSON.stringify(notes));
+  }, [notes]);
+
+  // Add a new note
+  const addNote = () => {
+    if (newNote.trim()) {
+      const newNoteObj = {
+        id: Date.now(),
+        text: newNote.trim(),
+        createdAt: new Date().toLocaleString()
+      };
+      setNotes([...notes, newNoteObj]);
+      setNewNote('');
+    }
+  };
+
+  // Delete a note
+  const deleteNote = (id) => {
+    setNotes(notes.filter(note => note.id !== id));
+  };
+
+  // Start editing a note
+  const startEditing = (note) => {
+    setEditingNoteId(note.id);
+    setEditingNoteText(note.text);
+  };
+
+  // Save edited note
+  const saveEditedNote = () => {
+    if (editingNoteText.trim()) {
+      setNotes(notes.map(note => 
+        note.id === editingNoteId 
+        ? { ...note, text: editingNoteText.trim() } 
+        : note
+      ));
+      setEditingNoteId(null);
+      setEditingNoteText('');
+    }
+  };
   // Holiday list data
   const holidayList = [
     { 
@@ -332,6 +392,92 @@ const FuturisticTimetable = () => {
     };
   }, [filteredClasses]);
 
+    // Render notes section
+    const renderNotes = () => (
+      <div className="space-y-4">
+        {/* New Note Input */}
+        <div className="flex space-x-2 mb-6">
+          <input 
+            type="text"
+            placeholder="Add a new note..."
+            value={newNote}
+            onChange={(e) => setNewNote(e.target.value)}
+            className="flex-grow bg-gray-800 text-white px-4 py-2 rounded-full focus:ring-2 focus:ring-blue-500 transition-all"
+          />
+          <button 
+            onClick={addNote}
+            className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-all"
+          >
+            <Plus />
+          </button>
+        </div>
+  
+        {/* Existing Notes List */}
+        {notes.length === 0 ? (
+          <div className="text-center text-gray-400 py-8 bg-gray-800 rounded-2xl">
+            No notes yet. Add a new note!
+          </div>
+        ) : (
+          notes.map(note => (
+            <div 
+              key={note.id} 
+              className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 rounded-2xl mb-4 shadow-lg transform transition-all hover:scale-[1.02]"
+            >
+              {editingNoteId === note.id ? (
+                // Edit mode
+                <div className="flex space-x-2">
+                  <input 
+                    type="text"
+                    value={editingNoteText}
+                    onChange={(e) => setEditingNoteText(e.target.value)}
+                    className="flex-grow bg-gray-700 text-white px-3 py-2 rounded-lg"
+                  />
+                  <button 
+                    onClick={saveEditedNote}
+                    className="bg-green-600 text-white p-2 rounded-full hover:bg-green-700"
+                  >
+                    <Save />
+                  </button>
+                  <button 
+                    onClick={() => {
+                      setEditingNoteId(null);
+                      setEditingNoteText('');
+                    }}
+                    className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700"
+                  >
+                    <X />
+                  </button>
+                </div>
+              ) : (
+                // View mode
+                <div className="flex justify-between items-center">
+                  <div>
+                    <p className="text-white">{note.text}</p>
+                    <p className="text-xs text-gray-400 mt-1">{note.createdAt}</p>
+                  </div>
+                  <div className="flex space-x-2">
+                    <button 
+                      onClick={() => startEditing(note)}
+                      className="text-blue-400 hover:text-blue-300"
+                    >
+                      <Edit size={20} />
+                    </button>
+                    <button 
+                      onClick={() => deleteNote(note.id)}
+                      className="text-red-400 hover:text-red-300"
+                    >
+                      <Trash2 size={20} />
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))
+        )}
+      </div>
+    );
+  
+
    // Render holiday list
    const renderHolidayList = () => (
     <div className="space-y-4">
@@ -406,6 +552,40 @@ const FuturisticTimetable = () => {
         {/* Header */}
         
         <header className="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div className="flex justify-center mb-6">
+            <div className="bg-gray-800 rounded-full p-1 flex space-x-2">
+              <button
+                onClick={() => setActiveTab('Timetable')}
+                className={`px-4 py-2 rounded-full ${
+                  activeTab === 'Timetable' 
+                  ? 'bg-purple-600 text-white' 
+                  : 'text-gray-300 hover:bg-gray-700'
+                }`}
+              >
+                Timetable
+              </button>
+              <button
+                onClick={() => setActiveTab('Holidays')}
+                className={`px-4 py-2 rounded-full ${
+                  activeTab === 'Holidays' 
+                  ? 'bg-purple-600 text-white' 
+                  : 'text-gray-300 hover:bg-gray-700'
+                }`}
+              >
+                Holidays
+              </button>
+              <button
+                onClick={() => setActiveTab('Notes')}
+                className={`px-4 py-2 rounded-full ${
+                  activeTab === 'Notes' 
+                  ? 'bg-purple-600 text-white' 
+                  : 'text-gray-300 hover:bg-gray-700'
+                }`}
+              >
+                Notes
+              </button>
+            </div>
+          </div>
            {/* Tab Navigation for Timetable and Holidays */}
         <div className="flex justify-center mb-6">
           <div className="bg-gray-800 rounded-full p-1 flex space-x-2">
@@ -571,6 +751,14 @@ const FuturisticTimetable = () => {
               University Holidays
             </h2>
             {renderHolidayList()}
+          </div>
+        )}
+        {activeTab === 'Notes' && (
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+              My Notes
+            </h2>
+            {renderNotes()}
           </div>
         )}
 
