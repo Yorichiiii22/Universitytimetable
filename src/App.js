@@ -23,6 +23,7 @@ const FuturisticTimetable = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [remainderAlarm, setRemaindAlarm] = useState(null);
   const [activeTab, setActiveTab] = useState('Timetable');
+  
 
   // New state for user notes
   const [notes, setNotes] = useState([]);
@@ -42,6 +43,387 @@ const FuturisticTimetable = () => {
 
   // Comprehensive timetable data
   const timetableData = {
+    "School of Computer Science Engineering (CSE-3)": {
+        "Monday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Subhadip Pramanik",
+                "room": "C-LH-307",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "COA",
+                "faculty": "Dr. Subhasis Dash",
+                "room": "C-LH-307",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "C-LH-307",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Suchismita Rout",
+                "room": "C-LH-204",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Subhadip Pramanik",
+                "room": "C-WL-101",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Subhadip Pramanik",
+                "room": "C-WL-101",
+                "tags": []
+            }
+        ],
+        "Tuesday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Suchismita Rout",
+                "room": "C-LH-302",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "COA",
+                "faculty": "Dr. Subhasis Dash",
+                "room": "C-LH-302",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DBMS",
+                "faculty": "",
+                "room": "C-LH-302",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-403",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OS",
+                "faculty": "Dr. Soumya Ranjan Nayak",
+                "room": "C-LH-403",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "C-LH-403",
+                "tags": []
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-303",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "COA",
+                "faculty": "Dr. Subhasis Dash",
+                "room": "C-LH-303",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "DM",
+                "faculty": "Dr. Prasanta Ku. Mohanty",
+                "room": "C-LH-403",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OS",
+                "faculty": "Dr. Soumya Ranjan Nayak",
+                "room": "C-LH-403",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DM",
+                "faculty": "Dr. Prasanta Ku. Mohanty",
+                "room": "C-LH-203",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-203",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS",
+                "faculty": "Dr. Soumya Ranjan Nayak",
+                "room": "C-LH-203",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OOPJ(L)",
+                "faculty": "Dr. Suchismita Rout",
+                "room": "C-WL-102",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OOPJ(L)",
+                "faculty": "Dr. Suchismita Rout",
+                "room": "C-WL-102",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "9:00 - 10:00",
+                "subject": "COA",
+                "faculty": "Dr. Subhasis Dash",
+                "room": "C-LH-202",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Subhasis Dash",
+                "room": "C-LH-202",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Subhadip Pramanik",
+                "room": "C-LH-004",
+                "tags": []
+            },
+            {
+                "time": "2:00 - 3:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Debachudamani Prusti",
+                "room": "C-WL-101",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Debachudamani Prusti",
+                "room": "C-WL-101",
+                "tags": []
+            }
+        ]
+    },
+    "School of Computer Science Engineering (CSE-7)": {
+        "Monday": [
+            {
+                "time": "2:00 - 3:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-404",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS",
+                "faculty": "Dr. Santosh Kumar Pani",
+                "room": "C-LH-404",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Hrudaya Kumar Tripathy",
+                "room": "C-LH-404",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "C-LH-404",
+                "tags": []
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-003",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DM",
+                "faculty": "Dr. Prasanta Ku. Das",
+                "room": "C-LH-003",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "COA",
+                "faculty": "",
+                "room": "C-LH-003",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS",
+                "faculty": "Dr. Santosh Kumar Pani",
+                "room": "C-LH-202",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OOPJ(L)",
+                "faculty": "Mr. Jyotiprakash Mishra",
+                "room": "C-WL-103",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OOPJ(L)",
+                "faculty": "Mr. Jyotiprakash Mishra",
+                "room": "C-WL-103",
+                "tags": []
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "OS",
+                "faculty": "Dr. Santosh Kumar Pani",
+                "room": "C-LH-303",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "COA",
+                "faculty": "Dr. Sujata Swain",
+                "room": "C-LH-303",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-404",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OOPJ",
+                "faculty": "Mr. Jyotiprakash Mishra",
+                "room": "C-LH-404",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DBMS",
+                "faculty": "",
+                "room": "C-LH-404",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "COA",
+                "faculty": "Dr. Sujata Swain",
+                "room": "C-LH-302",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DM",
+                "faculty": "Dr. Prasanta Ku. Das",
+                "room": "C-LH-302",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Prasanta Ku. Das",
+                "room": "C-LH-302",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Hrudaya Kumar Tripathy",
+                "room": "C-LH-303",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Hrudaya Kumar Tripathy",
+                "room": "C-WL-103",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Hrudaya Kumar Tripathy",
+                "room": "C-WL-103",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "12:00 - 1:00",
+                "subject": "COA",
+                "faculty": "Dr. Sujata Swain",
+                "room": "C-LH-301",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OOPJ",
+                "faculty": "Mr. Jyotiprakash Mishra",
+                "room": "C-LH-404",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Manoj Kumar Mishra",
+                "room": "C-WL-101",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Manoj Kumar Mishra",
+                "room": "C-WL-101",
+                "tags": []
+            }
+        ]
+    },
     'School of Computer Science Engineering (CSE-8)': {
       'Tuesday': [
         { time: '09:00 - 10:00', subject: 'VT(L)', faculty: '', room: '', tags: ['Elective'] },
@@ -86,6 +468,1585 @@ const FuturisticTimetable = () => {
 
 
     },
+    "School of Computer Engineering (CSE-24)": {
+        "Tuesday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Pinaki Sankar Chatterjee",
+                "room": "C-LH-003",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "COA",
+                "faculty": "Dr. Bijoy Das",
+                "room": "C-LH-003",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "OS",
+                "faculty": "",
+                "room": "C-LH-003",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-308",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DBMS",
+                "faculty": "Ms. Sarita Mishra",
+                "room": "C-LH-308",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "C-LH-308",
+                "tags": []
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "OS",
+                "faculty": "Mr. Amit Kumar",
+                "room": "C-LH-402",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "DBMS(L)",
+                "faculty": "Ms. Sarita Mishra",
+                "room": "C-WL-201",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "DBMS(L)",
+                "faculty": "Ms. Sarita Mishra",
+                "room": "C-WL-201",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-306",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DBMS",
+                "faculty": "Ms. Sarita Mishra",
+                "room": "C-LH-306",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "C-LH-306",
+                "tags": []
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Pinaki Sankar Chatterjee",
+                "room": "C-LH-208",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "OS",
+                "faculty": "Mr. Amit Kumar",
+                "room": "C-LH-208",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "COA",
+                "faculty": "",
+                "room": "C-LH-208",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DM",
+                "faculty": "Dr. Amalesh Kumar Manna",
+                "room": "C-LH-002",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "OS(L)",
+                "faculty": "Mr. Amit Kumar",
+                "room": "C-WL-102",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "OS(L)",
+                "faculty": "Mr. Amit Kumar",
+                "room": "C-WL-102",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-003",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "DM",
+                "faculty": "Dr. Amalesh Kumar Manna",
+                "room": "C-LH-003",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "COA",
+                "faculty": "",
+                "room": "C-LH-003",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "DBMS",
+                "faculty": "Ms. Sarita Mishra",
+                "room": "C-LH-204",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "COA",
+                "faculty": "Dr. Bijoy Das",
+                "room": "C-LH-204",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "OOPJ",
+                "faculty": "",
+                "room": "C-LH-204",
+                "tags": []
+            },
+            {
+                "time": "2:00 - 3:00",
+                "subject": "OOPJ(L)",
+                "faculty": "Mr. Rakesh Kumar Rai",
+                "room": "C-WL-301",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OOPJ(L)",
+                "faculty": "Mr. Rakesh Kumar Rai",
+                "room": "C-WL-301",
+                "tags": []
+            }
+        ]
+    },
+    "School of Computer Science Engineering (CSE-31)": {
+        "Monday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Aleena Swetapadma",
+                "room": "C-LH-001",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "COA",
+                "faculty": "Mr. Anil Kumar Swain",
+                "room": "C-LH-001",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "C-LH-001",
+                "tags": []
+            },
+            {
+                "time": "2:00 - 3:00",
+                "subject": "OOPJ(L)",
+                "faculty": "",
+                "room": "C-WL-102",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OOPJ(L)",
+                "faculty": "",
+                "room": "C-WL-102",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OS",
+                "faculty": "Mr. Soumya Sanket Patra",
+                "room": "C-LH-301",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-301",
+                "tags": []
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-408",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DM",
+                "faculty": "Dr. Bapuji Sahoo",
+                "room": "C-LH-408",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "OOPJ",
+                "faculty": "",
+                "room": "C-LH-408",
+                "tags": []
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DM",
+                "faculty": "Dr. Bapuji Sahoo",
+                "room": "C-LH-305",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "COA",
+                "faculty": "Mr. Anil Kumar Swain",
+                "room": "C-LH-305",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "OS",
+                "faculty": "Mr. Anil Kumar Swain",
+                "room": "C-LH-305",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Aleena Swetapadma",
+                "room": "C-LH-303",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OS(L)",
+                "faculty": "Mr. Soumya Sanket Patra",
+                "room": "C-WL-202",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OS(L)",
+                "faculty": "Mr. Soumya Sanket Patra",
+                "room": "C-WL-202",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DM",
+                "faculty": "Dr. Bapuji Sahoo",
+                "room": "C-LH-406",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "COA",
+                "faculty": "Mr. Anil Kumar Swain",
+                "room": "C-LH-406",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DBMS",
+                "faculty": "",
+                "room": "C-LH-406",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS",
+                "faculty": "Mr. Soumya Sanket Patra",
+                "room": "C-LH-301",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-301",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OOPJ",
+                "faculty": "",
+                "room": "C-LH-301",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "12:00 - 1:00",
+                "subject": "COA",
+                "faculty": "Mr. Anil Kumar Swain",
+                "room": "C-LH-305",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Mahendra Kumar Gourisaria",
+                "room": "C-LH-303",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Aleena Swetapadma",
+                "room": "C-WL-301",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Aleena Swetapadma",
+                "room": "C-WL-301",
+                "tags": []
+            }
+        ]
+    },
+    "School of Computer Science Engineering (CSE-32)": {
+        "Monday": [
+            {
+                "time": "9:00 - 10:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-003",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "C-LH-003",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Santwana Sagnika",
+                "room": "C-LH-409",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. NIkhilanand Arya",
+                "room": "C-LH-409",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "OS",
+                "faculty": "",
+                "room": "C-LH-409",
+                "tags": []
+            }
+        ],
+        "Tuesday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "DM",
+                "faculty": "Dr. Kartikeswar Mahalik",
+                "room": "C-LH-207",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. NIkhilanand Arya",
+                "room": "C-LH-207",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-207",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "COA",
+                "faculty": "Dr. Ajit Kumar Pasayat",
+                "room": "C-LH-408",
+                "tags": []
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Santwana Sagnika",
+                "room": "C-LH-307",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "COA",
+                "faculty": "Dr. Ajit Kumar Pasayat",
+                "room": "C-LH-307",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "C-LH-307",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. NIkhilanand Arya",
+                "room": "C-WL-201",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "OOPJ(L)",
+                "faculty": "Dr. NIkhilanand Arya",
+                "room": "C-WL-201",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "OOPJ(L)",
+                "faculty": "",
+                "room": "C-WL-201",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "ED|IOC|OB",
+                "faculty": "",
+                "room": "C-LH-308",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Santwana Sagnika",
+                "room": "C-WL-302",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Santwana Sagnika",
+                "room": "C-WL-302",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "OS",
+                "faculty": "Mr. Sunil Kumar Sawant",
+                "room": "C-LH-407",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DM",
+                "faculty": "Dr. Kartikeswar Mahalik",
+                "room": "C-LH-407",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "COA",
+                "faculty": "",
+                "room": "C-LH-407",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "9:00 - 10:00",
+                "subject": "OS(L)",
+                "faculty": "Mrs. Subhashree Darshana",
+                "room": "C-WL-302",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "OS(L)",
+                "faculty": "Mrs. Subhashree Darshana",
+                "room": "C-WL-302",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "COA",
+                "faculty": "Dr. Ajit Kumar Pasayat",
+                "room": "C-LH-306",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "OS",
+                "faculty": "Mr. Sunil Kumar Sawant",
+                "room": "C-LH-306",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DBMS",
+                "faculty": "",
+                "room": "C-LH-306",
+                "tags": []
+            }
+        ]
+    },
+    "IT-1": {
+        "Monday": [
+            {
+                "time": "2:00 - 3:00",
+                "subject": "DM",
+                "faculty": "Dr. Sushma Singh",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "IND4",
+                "faculty": "Prof. Shruti",
+                "room": "B-204",
+                "tags": []
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "12:00 - 1:00",
+                "subject": "ITC",
+                "faculty": "Mr. Soumya Sanket Patra",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "EECO",
+                "faculty": "Dr. Sugyanta Priyadarshini",
+                "room": "B-205",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OS(L)",
+                "faculty": "Mr. Soumya Sanket Patra",
+                "room": "B-WL-101",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OS(L)",
+                "faculty": "Mr. Soumya Sanket Patra",
+                "room": "B-WL-101",
+                "tags": []
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DM",
+                "faculty": "Dr. Sushma Singh",
+                "room": "A-LH-103",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "EECO",
+                "faculty": "Dr. Sugyanta Priyadarshini",
+                "room": "A-LH-103",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS",
+                "faculty": "Mr. Soumya Sanket Patra",
+                "room": "B-201",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Meghana G Raj",
+                "room": "B-WL-101",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Meghana G Raj",
+                "room": "B-WL-101",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "IND4",
+                "faculty": "Prof. Shruti",
+                "room": "A-LH-207",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "ITC",
+                "faculty": "Mr. Soumya Sanket Patra",
+                "room": "A-LH-207",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DBMS",
+                "faculty": "",
+                "room": "A-LH-207",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "DM",
+                "faculty": "Dr. Sushma Singh",
+                "room": "B-203",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "EECO",
+                "faculty": "Dr. Sugyanta Priyadarshini",
+                "room": "B-203",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OS",
+                "faculty": "",
+                "room": "B-203",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "OS",
+                "faculty": "Mr. Soumya Sanket Patra",
+                "room": "B-302",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Meghana G Raj",
+                "room": "B-201",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "ITC",
+                "faculty": "Mr. Soumya Sanket Patra",
+                "room": "B-201",
+                "tags": []
+            }
+        ]
+    },
+    "IT-2": {
+        "Monday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "EECO",
+                "faculty": "Dr. Smrutirekha Mohanty",
+                "room": "B-306",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "ITC",
+                "faculty": "Dr. Shaswati Patra",
+                "room": "B-306",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "B-306",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "IND4",
+                "faculty": "Prof. Shruti",
+                "room": "A-LH-202",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "OS",
+                "faculty": "Dr. Tanmoy Maitra",
+                "room": "A-LH-202",
+                "tags": []
+            }
+        ],
+        "Tuesday": [
+            {
+                "time": "2:00 - 3:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Anjan Bandyopadhyay",
+                "room": "B-WL-101",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Anjan Bandyopadhyay",
+                "room": "B-WL-101",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DM",
+                "faculty": "Dr. Archana Senapati",
+                "room": "B-201",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "B-201",
+                "tags": []
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Anjan Bandyopadhyay",
+                "room": "B-303",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "ITC",
+                "faculty": "Dr. Shaswati Patra",
+                "room": "B-303",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "B-303",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "DM",
+                "faculty": "Dr. Archana Senapati",
+                "room": "A-LH-003",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Anjan Bandyopadhyay",
+                "room": "A-LH-003",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "IND4",
+                "faculty": "",
+                "room": "A-LH-003",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "EECO",
+                "faculty": "Dr. Smrutirekha Mohanty",
+                "room": "A-LH-103",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "ITC",
+                "faculty": "Dr. Shaswati Patra",
+                "room": "A-LH-103",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "OS",
+                "faculty": "",
+                "room": "A-LH-103",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "OS",
+                "faculty": "Dr. Tanmoy Maitra",
+                "room": "B-201",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Suneeta Mohanty",
+                "room": "B-WL-104",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Suneeta Mohanty",
+                "room": "B-WL-104",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Anjan Bandyopadhyay",
+                "room": "B-403",
+                "tags": []
+            }
+        ]
+    },
+    "IT-3": {
+        "Monday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "OS",
+                "faculty": "Dr. Alok Kumar Jagadev",
+                "room": "A-LH-203",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "IND4",
+                "faculty": "Prof. Shruti",
+                "room": "A-LH-203",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "EECO",
+                "faculty": "Dr. Sugyanta Priyadarshini",
+                "room": "B-201",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Ashish Singh",
+                "room": "B-201",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "B-201",
+                "tags": []
+            }
+        ],
+        "Tuesday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DM",
+                "faculty": "Dr. Sushma Singh",
+                "room": "A-LH-204",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Ashish Singh",
+                "room": "A-LH-204",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "IND4",
+                "faculty": "Prof. Shruti",
+                "room": "B-202",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "ITC",
+                "faculty": "Dr. Shaswati Patra",
+                "room": "B-202",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "B-202",
+                "tags": []
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS",
+                "faculty": "Dr. Alok Kumar Jagadev",
+                "room": "B-202",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Ashish Singh",
+                "room": "B-202",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "B-202",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "ITC",
+                "faculty": "Dr. Shaswati Patra",
+                "room": "A-LH-201",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DM",
+                "faculty": "Dr. Sushma Singh",
+                "room": "A-LH-201",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "A-LH-201",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS",
+                "faculty": "Dr. Alok Kumar Jagadev",
+                "room": "B-206",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Alok Kumar Jagadev",
+                "room": "B-WL-101",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Alok Kumar Jagadev",
+                "room": "B-WL-101",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "3:00 - 4:00",
+                "subject": "ITC",
+                "faculty": "Dr. Shaswati Patra",
+                "room": "B-203",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Ashish Singh",
+                "room": "A-DL-008",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Ashish Singh",
+                "room": "A-DL-008",
+                "tags": []
+            }
+        ]
+    },
+    "IT-4": {
+        "Monday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Chittaranjan Pradhan",
+                "room": "A-LH-109",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "ITC",
+                "faculty": "Dr. Partha Sarathi Paul",
+                "room": "A-LH-109",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "A-LH-109",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DM",
+                "faculty": "Dr. Archana Senapati",
+                "room": "A-LH-201",
+                "tags": []
+            }
+        ],
+        "Tuesday": [
+            {
+                "time": "9:00 - 10:00",
+                "subject": "OS",
+                "faculty": "Dr. Adyasha Dash",
+                "room": "B-202",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "IND4",
+                "faculty": "",
+                "room": "B-202",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "ITC",
+                "faculty": "Dr. Partha Sarathi Paul",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "EECO",
+                "faculty": "Dr. Smrutirekha Mohanty",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "A-LH-205",
+                "tags": []
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "ITC",
+                "faculty": "Dr. Partha Sarathi Paul",
+                "room": "A-LH-204",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Chittaranjan Pradhan",
+                "room": "A-LH-204",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "A-LH-204",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "IND4",
+                "faculty": "Prof. P. K. Samanta",
+                "room": "A-LH-204",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "OS",
+                "faculty": "Dr. Adyasha Dash",
+                "room": "A-LH-204",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "A-LH-204",
+                "tags": []
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "2:00 - 3:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Chittaranjan Pradhan",
+                "room": "A-DL-101",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Chittaranjan Pradhan",
+                "room": "A-DL-101",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DM",
+                "faculty": "Dr. Archana Senapati",
+                "room": "A-LH-104",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "OS",
+                "faculty": "Dr. Adyasha Dash",
+                "room": "A-LH-104",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Chittaranjan Pradhan",
+                "room": "A-LH-104",
+                "tags": []
+            },
+            {
+                "time": "2:00 - 3:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Adyasha Dash",
+                "room": "A-DL-001",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Adyasha Dash",
+                "room": "A-DL-001",
+                "tags": []
+            }
+        ]
+    },
+    "IT-5": {
+        "Monday": [
+            {
+                "time": "12:00 - 1:00",
+                "subject": "ITC",
+                "faculty": "Dr. Partha Sarathi Paul",
+                "room": "A-LH-204",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DM",
+                "faculty": "Dr. Partha Sarathi Paul",
+                "room": "A-LH-204",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS",
+                "faculty": "Dr. Suchismita Das",
+                "room": "B-205",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Santosh Kumar Swain",
+                "room": "A-DL-108",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Santosh Kumar Swain",
+                "room": "A-DL-108",
+                "tags": []
+            }
+        ],
+        "Tuesday": [
+            {
+                "time": "12:00 - 1:00",
+                "subject": "ITC",
+                "faculty": "Dr. Partha Sarathi Paul",
+                "room": "A-LH-207",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DBMS",
+                "faculty": "",
+                "room": "A-LH-207",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS",
+                "faculty": "Dr. Suchismita Das",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Samaresh Mishra",
+                "room": "A-DL-002",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Samaresh Mishra",
+                "room": "A-DL-002",
+                "tags": []
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DM",
+                "faculty": "Dr. Sushma Singh",
+                "room": "B-405",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "IND4",
+                "faculty": "",
+                "room": "B-405",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "EECO",
+                "faculty": "Dr. Subhrajit Rath",
+                "room": "B-203",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "ITC",
+                "faculty": "Dr. Partha Sarathi Paul",
+                "room": "B-203",
+                "tags": []
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Samaresh Mishra",
+                "room": "A-LH-203",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "EECO",
+                "faculty": "Dr. Subhrajit Rath",
+                "room": "A-LH-203",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "OS",
+                "faculty": "",
+                "room": "A-LH-203",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "DM",
+                "faculty": "Dr. Sushma Singh",
+                "room": "B-203",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "2:00 - 3:00",
+                "subject": "IND4",
+                "faculty": "Prof. P. K. Samanta",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Samaresh Mishra",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DM",
+                "faculty": "Dr. Sushma Singh",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "B-204",
+                "tags": []
+            }
+        ]
+    },
+    "School of Computer Science And System Engineering (CSSE-1)": {
+        "Monday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "EECO",
+                "faculty": "Dr. Sanjaya Kumar Lenka",
+                "room": "A-LH-109",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "PSS",
+                "faculty": "Prof. Sananda Kumar",
+                "room": "A-LH-109",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "A-LH-109",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS",
+                "faculty": "Dr. Murari Mandal",
+                "room": "B-202",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Murari Mandal",
+                "room": "B-WL-101",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Murari Mandal",
+                "room": "B-WL-101",
+                "tags": []
+            }
+        ],
+        "Tuesday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DM",
+                "faculty": "Dr. Suvasis Nayak",
+                "room": "A-LH-206",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "IND4",
+                "faculty": "Prof. P. K. Samanta",
+                "room": "A-LH-206",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DBMS",
+                "faculty": "Prof. P. K. Samanta",
+                "room": "A-LH-206",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "PSS",
+                "faculty": "Prof. Sananda Kumar",
+                "room": "B-201",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Kumar Devadutta",
+                "room": "B-WL-101",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Kumar Devadutta",
+                "room": "B-WL-101",
+                "tags": []
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "2:00 - 3:00",
+                "subject": "PSS",
+                "faculty": "Prof. Sananda Kumar",
+                "room": "B-201",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "EECO",
+                "faculty": "Dr. Sanjaya Kumar Lenka",
+                "room": "B-201",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DM",
+                "faculty": "Dr. Suvasis Nayak",
+                "room": "B-201",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DM",
+                "faculty": "Dr. Suvasis Nayak",
+                "room": "A-LH-110",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "IND4",
+                "faculty": "Prof. P. K. Samanta",
+                "room": "A-LH-110",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "A-LH-110",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS",
+                "faculty": "Dr. Murari Mandal",
+                "room": "B-201",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Kumar Devadutta",
+                "room": "B-201",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "PSS",
+                "faculty": "",
+                "room": "B-201",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Kumar Devadutta",
+                "room": "B-202",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "OS",
+                "faculty": "Dr. Murari Mandal",
+                "room": "B-202",
+                "tags": []
+            }
+        ]
+    },
+    
     'School of Computer Science And System Engineering (CSSE-2)': {
       'Monday': [
         { time: '09:00 - 10:00', subject: 'PSS', faculty: 'Prof. Sananda Kumar', room: 'B-202', tags: ['Signals'] },
@@ -164,6 +2125,561 @@ const FuturisticTimetable = () => {
       
 
     },
+    "School of Computer Science And Communication Engineering (CSCE-1)": {
+        "Tuesday": [
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DM",
+                "faculty": "Dr. Arun Kumar Gupta",
+                "room": "A-LH-201",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "A-LH-201",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Arghya Kundu",
+                "room": "B-205",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Santwana Sagnika",
+                "room": "A-DL-106",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Santwana Sagnika",
+                "room": "A-DL-106",
+                "tags": []
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DM",
+                "faculty": "Dr. Arun Kumar Gupta",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "IS",
+                "faculty": "Dr. Debachudamani Prusti",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Arghya Kundu",
+                "room": "B-206",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Leena Das",
+                "room": "B-WL-102",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Leena Das",
+                "room": "B-WL-102",
+                "tags": []
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "OS",
+                "faculty": "Dr. Santwana Sagnika",
+                "room": "A-LH-110",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "IS",
+                "faculty": "Dr. Debachudamani Prusti",
+                "room": "A-LH-110",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "A-LH-110",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "DM",
+                "faculty": "Dr. Arun Kumar Gupta",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Leena Das",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OOPJ",
+                "faculty": "",
+                "room": "B-204",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Leena Das",
+                "room": "A-LH-203",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "OS",
+                "faculty": "Dr. Santwana Sagnika",
+                "room": "A-LH-203",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "A-LH-203",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "9:00 - 10:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Leena Das",
+                "room": "A-LH-004",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "IS",
+                "faculty": "",
+                "room": "A-LH-004",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OS",
+                "faculty": "Dr. Santwana Sagnika",
+                "room": "A-LH-004",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OOPJ(L)",
+                "faculty": "Dr. Arghya Kundu",
+                "room": "A-DL-001",
+                "tags": []
+            }
+        ]
+    },
+    "School of Computer Science And Communication Engineering (CSCE-2)": {
+        "Monday": [
+            {
+                "time": "2:00 - 3:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Aleena Swetapadma",
+                "room": "B-WL-101",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "DBMS(L)",
+                "faculty": "Dr. Aleena Swetapadma",
+                "room": "B-WL-101",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OS",
+                "faculty": "Dr. Kumar Surjeet Chaudhury",
+                "room": "B-202",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "B-202",
+                "tags": []
+            }
+        ],
+        "Wednesday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "DM",
+                "faculty": "Dr. Arun Kumar Gupta",
+                "room": "A-LH-009",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "IS",
+                "faculty": "Dr. Debachudamani Prusti",
+                "room": "A-LH-009",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "A-LH-009",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Aleena Swetapadma",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "OOPJ(L)",
+                "faculty": "Dr. Arup Abhinna Acharya",
+                "room": "B-WL-104",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "OOPJ(L)",
+                "faculty": "Dr. Arup Abhinna Acharya",
+                "room": "B-WL-104",
+                "tags": []
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "EECO",
+                "faculty": "Dr. Sugyanta Priyadarshini",
+                "room": "B-301",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Arup Abhinna Acharya",
+                "room": "B-301",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "IS",
+                "faculty": "Dr. Arup Abhinna Acharya",
+                "room": "B-301",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "OS",
+                "faculty": "Dr. Kumar Surjeet Chaudhury",
+                "room": "A-LH-206",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DBMS",
+                "faculty": "Dr. Aleena Swetapadma",
+                "room": "A-LH-206",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "DM",
+                "faculty": "",
+                "room": "A-LH-206",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DM",
+                "faculty": "Dr. Arun Kumar Gupta",
+                "room": "A-LH-204",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "EECO",
+                "faculty": "Dr. Sugyanta Priyadarshini",
+                "room": "A-LH-204",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "OOPJ",
+                "faculty": "",
+                "room": "A-LH-204",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "IS",
+                "faculty": "Dr. Debachudamani Prusti",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "OS",
+                "faculty": "Dr. Kumar Surjeet Chaudhury",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "DBMS",
+                "faculty": "",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "11:00 - 12:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Arup Abhinna Acharya",
+                "room": "A-LH-105",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Kumar Surjeet Chaudhury",
+                "room": "B-WL-104",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Kumar Surjeet Chaudhury",
+                "room": "B-WL-104",
+                "tags": []
+            }
+        ]
+    },
+    "School of Computer Science And Communication Engineering (CSCE-3)": {
+        "Monday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "OS",
+                "faculty": "Dr. Debachudamani Prusti",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DM",
+                "faculty": "Dr. Arun Kumar Gupta",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "A-LH-205",
+                "tags": []
+            }
+        ],
+        "Tuesday": [
+            {
+                "time": "8:00 - 9:00",
+                "subject": "DM",
+                "faculty": "Dr. Arun Kumar Gupta",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "9:00 - 10:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Pradeep Kumar Mallick",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "10:00 - 11:00",
+                "subject": "IS",
+                "faculty": "",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "2:00 - 3:00",
+                "subject": "OOPJ(L)",
+                "faculty": "Dr. Pradeep Kumar Mallick",
+                "room": "B-WL-102",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OOPJ(L)",
+                "faculty": "Dr. Pradeep Kumar Mallick",
+                "room": "B-WL-102",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS",
+                "faculty": "Mr. R. N. Ramakant Parida",
+                "room": "B-203",
+                "tags": []
+            }
+        ],
+        "Thursday": [
+            {
+                "time": "12:00 - 1:00",
+                "subject": "DM",
+                "faculty": "Dr. Arun Kumar Gupta",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "EECO",
+                "faculty": "",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "OOPJ",
+                "faculty": "Dr. Pradeep Kumar Mallick",
+                "room": "B-205",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Debachudamani Prusti",
+                "room": "B-WL-102",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OS(L)",
+                "faculty": "Dr. Debachudamani Prusti",
+                "room": "B-WL-102",
+                "tags": []
+            }
+        ],
+        "Friday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "DBMS",
+                "faculty": "Mr. R. N. Ramakant Parida",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "IS",
+                "faculty": "Dr. Kumar Devadutta",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "1:00 - 2:00",
+                "subject": "OOPJ",
+                "faculty": "",
+                "room": "A-LH-205",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "EECO",
+                "faculty": "Dr. Subhrajit Rath",
+                "room": "B-205",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DM",
+                "faculty": "Dr. Arun Kumar Gupta",
+                "room": "B-205",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "OS",
+                "faculty": "",
+                "room": "B-205",
+                "tags": []
+            }
+        ],
+        "Saturday": [
+            {
+                "time": "11:00 - 12:00",
+                "subject": "OS",
+                "faculty": "Dr. Debachudamani Prusti",
+                "room": "B-405",
+                "tags": []
+            },
+            {
+                "time": "12:00 - 1:00",
+                "subject": "IS",
+                "faculty": "Dr. Kumar Devadutta",
+                "room": "B-405",
+                "tags": []
+            },
+            {
+                "time": "3:00 - 4:00",
+                "subject": "DBMS",
+                "faculty": "Mr. R. N. Ramakant Parida",
+                "room": "B-204",
+                "tags": []
+            },
+            {
+                "time": "4:00 - 5:00",
+                "subject": "DBMS(L)",
+                "faculty": "Mr. R. N. Ramakant Parida",
+                "room": "B-WL-101",
+                "tags": []
+            },
+            {
+                "time": "5:00 - 6:00",
+                "subject": "DBMS(L)",
+                "faculty": "Mr. R. N. Ramakant Parida",
+                "room": "B-WL-101",
+                "tags": []
+            }
+        ]
+    },
+    
     
       // Additional school data can be added here
       
@@ -182,6 +2698,7 @@ const FuturisticTimetable = () => {
       slot.faculty.toLowerCase().includes(searchTerm.toLowerCase()) ||
       slot.room.toLowerCase().includes(searchTerm.toLowerCase())
     );
+    
 
     // Load notes from local storage on component mount
   useEffect(() => {
@@ -651,7 +3168,7 @@ const FuturisticTimetable = () => {
                 <Filter />
               </button>
               {isMenuOpen && (
-                <div className="absolute z-10 w-full bg-gray-800 rounded-lg shadow-2xl mt-2">
+                <div className="absolute z-10 w-full bg-gray-800 rounded-lg shadow-2xl mt-2 max-h-[300px] overflow-y-scroll">
                   {schools.map(school => (
                     <button 
                       key={school}
@@ -669,7 +3186,9 @@ const FuturisticTimetable = () => {
             </div>
           ) : (
             <div className="w-1/4 pr-4 border-r border-gray-700">
-              <h2 className="text-2xl font-semibold mb-4">Schools</h2>
+              <h2 className="text-2xl font-semibold mb-4 sticky top-0 bg-gradient-to-br from-gray-900 to-blue-950 z-10 pb-2">Schools</h2>
+              <div className="h-[500px] overflow-y-scroll pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-800">
+
               {schools.map(school => (
                 <button 
                   key={school}
@@ -683,6 +3202,7 @@ const FuturisticTimetable = () => {
                   {school}
                 </button>
               ))}
+            </div>
             </div>
           )}
 
